@@ -1,0 +1,37 @@
+//@version=5
+strategy("Double Structure Reversal Strategy", overlay=true)
+
+// Paramètres
+lookback = input(14, "Lookback Period")
+threshold = input(0.5, "BOS Threshold")
+
+// Fonction pour détecter les points pivots
+pivotHigh(len) => ta.highest(high, len)
+pivotLow(len) => ta.lowest(low, len)
+
+// Détection de la structure du marché
+isHigherHigh = high > pivotHigh(lookback)
+isLowerLow = low < pivotLow(lookback)
+
+// Détection du Break of Structure (BOS)
+bullishBOS = isHigherHigh and close > open and (close - open) / (high - low) > threshold
+bearishBOS = isLowerLow and open > close and (open - close) / (high - low) > threshold
+
+// Conditions pour la double structure
+doubleBullishBOS = bullishBOS and bullishBOS[1]
+doubleBearishBOS = bearishBOS and bearishBOS[1]
+
+// Signaux d'entrée
+longCondition = doubleBullishBOS and close > open and (close - open) / (high - low) > threshold
+shortCondition = doubleBearishBOS and open > close and (open - close) / (high - low) > threshold
+
+// Exécution des ordres
+if (longCondition)
+    strategy.entry("Long", strategy.long)
+
+if (shortCondition)
+    strategy.entry("Short", strategy.short)
+
+// Visualisation
+plotshape(longCondition, "Long Signal", shape.triangleup, location.belowbar, color.green, size=size.small)
+plotshape(shortCondition, "Short Signal", shape.triangledown, location.abovebar, color.red, size=size.small)
