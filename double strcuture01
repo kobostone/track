@@ -35,3 +35,32 @@ if (shortCondition)
 // Visualisation
 plotshape(longCondition, "Long Signal", shape.triangleup, location.belowbar, color.green, size=size.small)
 plotshape(shortCondition, "Short Signal", shape.triangledown, location.abovebar, color.red, size=size.small)
+
+
+******
+
+
+Pour utiliser les bougies pleines afin de confirmer les signaux Double BOS (Break of Structure), suivez ces étapes :
+Identifiez le Double BOS
+Repérez deux cassures de structure consécutives dans la même direction (haussière ou baissière).
+Attendez la bougie de confirmation
+Après le Double BOS, recherchez une bougie pleine dans la direction de la tendance1:
+Pour un signal haussier : Une bougie haussière avec un corps important et peu ou pas de mèches
+Pour un signal baissier : Une bougie baissière avec un corps important et peu ou pas de mèches
+
+Vérifiez l'avalement
+La bougie de confirmation doit "avaler" complètement la bougie précédente1. 
+Cela signifie que le corps de la bougie de confirmation doit englober entièrement le corps de la bougie précédente.
+
+Observez la taille du corps
+Plus le corps de la bougie de confirmation est grand, plus le signal est fort8.
+
+Considérez le timeframe
+Les confirmations par bougies sont généralement plus fiables sur des timeframes plus élevés (H4, Daily, Weekly)
+
+Attendez la clôture
+Assurez-vous que la bougie de confirmation clôture au-dessus (signal haussier) ou en-dessous (signal baissier) du niveau de cassure
+.
+Vérifiez le contexte
+Confirmez que la direction du signal est cohérente avec l'analyse globale de la tendance et des niveaux clés1.
+En suivant ces étapes, vous pouvez utiliser efficacement les bougies pleines pour renforcer la fiabilité des signaux Double BOS et améliorer vos décisions de trading.
